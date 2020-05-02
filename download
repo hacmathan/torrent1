@@ -1,0 +1,260 @@
+{
+  " nbformat " : 4 ,
+  " nbformat_minor " : 0 ,
+  " siêu dữ liệu " : {
+    " colab " : {
+      " tên " : " Torrent To Google Drive Downloader v2 " ,
+      " phiên bản " : " 0.3.2 " ,
+      " xuất xứ " : [],
+      " sụp đổ " : [],
+      " bao gồm_colab_link " : đúng
+    },
+    " hạt nhân " : {
+      " tên " : " python3 " ,
+      " display_name " : " Python 3 "
+    }
+  },
+  " các tế bào " : [
+    {
+      " Cell_type " : " markdown " ,
+      " siêu dữ liệu " : {
+        " id " : " view-in-github " ,
+        " colab_type " : " văn bản "
+      },
+      " nguồn " : [
+        " <A href = \" https://colab.research.google.com/github/spireon-ex10/Torrent-To-Google-Drive-Downloader/blob/master/Torrent_To_Google_Drive_Downloader_v2.ipynb \ " target = \" _parent \ " > <img src = \" https://colab.research.google.com/assets/colab-badge.svg \ " alt = \" Mở trong Colab \ " /> </a> "
+      ]
+    },
+    {
+      " Cell_type " : " markdown " ,
+      " siêu dữ liệu " : {
+        " id " : " aQuWDmfm9YOi " ,
+        " colab_type " : " văn bản "
+      },
+      " nguồn " : [
+        " # Torrent To Google Drive Downloader v2 "
+      ]
+    },
+    {
+      " Cell_type " : " markdown " ,
+      " siêu dữ liệu " : {
+        " id " : " Uf90U73y9YOj " ,
+        " colab_type " : " văn bản "
+      },
+      " nguồn " : [
+        " ### Gắn kết Google Drive \ n " ,
+        " Để truyền phát tệp, chúng tôi cần gắn Google Drive. "
+      ]
+    },
+    {
+      " cell_type " : " mã " ,
+      " siêu dữ liệu " : {
+        " colab_type " : " mã " ,
+        " id " : " oWM9l2fvtuvO " ,
+        " đầu ra " : " c6239492-4600-40ba-9bf0-d1b3d07c6ba3 " ,
+        " colab " : {
+          "cơ sở_uri " : " https: // localhost: 8080 / " ,
+          " chiều cao " : 122
+        }
+      },
+      " nguồn " : [
+        " từ ổ đĩa nhập google.colab \ n " ,
+        " drive.mount ('/ nội dung / ổ đĩa') "
+      ],
+      " exec_count " : 0 ,
+      " đầu ra " : [
+        {
+          " output_type " : " luồng " ,
+          " văn bản " : [
+            " Truy cập URL này trên trình duyệt: https://accounts.google.com.vn/o/oauth2/auth?client_id=947318989804-6bn6qk8qdgf4n4g3pfee6491hc0brc4i.apps.googleusercontent.com = email% 20https% 3A% 2F% 2Fwww.googleapis.com% 2Fauth% 2Fdocs.test% 20https% 3A% 2F% 2Fwww.googleapis.com% 2Fauth% 2Fdrive% 20https% 3A% 2% % 2Fdrive.photos.readonly% 20https% 3A% 2F% 2Fwww.googleapis.com% 2Fauth% 2Fpeopleapi.readonly & respons_type = code \ n " ,
+            " \ n " ,
+            " Nhập mã ủy quyền của bạn: \ n " ,
+            " · ////////////////// \ n " ,
+            " Được gắn tại / nội dung / ổ đĩa \ n "
+          ],
+          " tên " : " thiết bị xuất chuẩn "
+        }
+      ]
+    },
+    {
+      " Cell_type " : " markdown " ,
+      " siêu dữ liệu " : {
+        " id " : " FexiyATtNwTG " ,
+        " colab_type " : " văn bản "
+      },
+      " nguồn " : [
+        " ### Phụ thuộc \ n " ,
+        " https://www.libtorrent.org/ "
+      ]
+    },
+    {
+      " cell_type " : " mã " ,
+      " siêu dữ liệu " : {
+        " colab_type " : " mã " ,
+        " id " : " m6hF0emftx4h " ,
+        " đầu ra " : " 72ce1d01-8dd8-4523-ed67-cdc41ac745d6 " ,
+        " colab " : {
+          "cơ sở_uri " : " https: // localhost: 8080 / " ,
+          " chiều cao " : 493
+        }
+      },
+      " nguồn " : [
+        " ! apt cài đặt python3-libtorrent "
+      ],
+      " exec_count " : 0 ,
+      " đầu ra " : [
+        {
+          " output_type " : " luồng " ,
+          " văn bản " : [
+            " Đọc danh sách gói ... Xong \ n " ,
+            " Xây dựng cây phụ thuộc        \ n " ,
+            " Đọc thông tin trạng thái ... Xong \ n " ,
+            " Gói sau đã được cài đặt tự động và không còn bắt buộc: \ n " ,
+            "   libnvidia-common-410 \ n " ,
+            " Sử dụng 'apt autoremove' để xóa nó. \ N " ,
+            " Các gói bổ sung sau sẽ được cài đặt: \ n " ,
+            "   libtorrent-rasterbar9 \ n " ,
+            " Gói được đề xuất: \ n " ,
+            "   libtorrent-rasterbar-dbg \ n " ,
+            " Các gói MỚI sau đây sẽ được cài đặt: \ n " ,
+            "   libtorrent-rasterbar9 python3-libtorrent \ n " ,
+            " 0 được nâng cấp, 2 cài đặt mới, 0 để xóa và 4 không được nâng cấp. \ N " ,
+            " Cần lấy 1,569 kB tài liệu lưu trữ. \ N " ,
+            " Sau thao tác này, 5.718 kB không gian đĩa bổ sung sẽ được sử dụng. \ N " ,
+            " Nhận: 1 http://archive.ubfox.com/ubfox bionic / Universe amd64 libtorrent-rasterbar9 amd64 1.1.5-1build1 [1,258 kB] \ n " ,
+            " Nhận: 2 http://archive.ubfox.com/ubfox bionic / Universe amd64 python3-libtorrent amd64 1.1.5-1build1 [310 kB] \ n " ,
+            "Đã tải 1.569 kB trong 1 giây (1.649 kB / s) \ n " ,
+            " Chọn gói chưa được chọn trước đó libtorrent-rasterbar9. \ N " ,
+            " (Đọc cơ sở dữ liệu ... 130963 tệp và thư mục hiện được cài đặt.) \ N " ,
+            " Chuẩn bị giải nén ... / libtorrent-rasterbar9_1.1.5-1build1_amd64.deb ... \ n " ,
+            " Giải nén libtorrent-rasterbar9 (1.1.5-1build1) ... \ n " ,
+            " Chọn gói python3-libtorrent chưa được chọn trước đó. \ N " ,
+            " Chuẩn bị giải nén ... / python3-libtorrent_1.1.5-1build1_amd64.deb ... \ n " ,
+            " Giải nén python3-libtorrent (1.1.5-1build1) ... \ n " ,
+            " Thiết lập libtorrent-rasterbar9 (1.1.5-1build1) ... \ n " ,
+            " Thiết lập python3-libtorrent (1.1.5-1build1) ... \ n " ,
+            " Xử lý kích hoạt cho libc-bin (2.27-3ubfox1) ... \ n "
+          ],
+          " tên " : " thiết bị xuất chuẩn "
+        }
+      ]
+    },
+    {
+      " Cell_type " : " markdown " ,
+      " siêu dữ liệu " : {
+        " id " : " tqKcWHZcYRIA " ,
+        " colab_type " : " văn bản "
+      },
+      " nguồn " : [
+        " ### Mã để tải xuống torrent \ n " ,
+        " Biến ** liên kết ** lưu trữ chuỗi liên kết. "
+      ]
+    },
+    {
+      " cell_type " : " mã " ,
+      " siêu dữ liệu " : {
+        " colab_type " : " mã " ,
+        " đầu ra " : " 26d4352b-3767-475c-d1e6-f60dc1924403 " ,
+        " id " : " b09BxnANO2ep " ,
+        " colab " : {
+          "cơ sở_uri " : " https: // localhost: 8080 / " ,
+          " chiều cao " : 697
+        }
+      },
+      " nguồn " : [
+        " nhập libtorrent dưới dạng lt \ n " ,
+        " thời gian nhập \ n " ,
+        " nhập thời gian \ n " ,
+        " \ n " ,
+        " Ses = lt.session () \ n " ,
+        " Ses.listen_on (6881, 6891) \ n " ,
+        " params = { \ n " ,
+        "     'save_path': '/ content / drive / My Drive / Torrent /', \ n " ,
+        "     'Storage_mode': lt.st Storage_mode_t (2), \ n " ,
+        "     'đã tạm dừng': Sai, \ n " ,
+        "     'auto_managed': Đúng, \ n " ,
+        "     'trùng lặp_is_error': Đúng} \ n " ,
+        " link = \" https://yts.lt/torrent/doad/866BDCFA006930A718ADBC21D8CAE1F2C7F9D8B3 \ " # PASTE TORRENT / MAGNET LINK TẠI ĐÂY \ n " ,
+        " in (liên kết) \ n " ,
+        " \ n " ,
+        " xử lý = lt.add_magnet_uri (ses, liên kết, params) \ n " ,
+        " Ses.start_dht () \ n " ,
+        " \ n " ,
+        " bắt đầu = time.time () \ n " ,
+        " In (datetime.datetime.now ()) \ n " ,
+        " \ n " ,
+        " in ('Đang tải xuống siêu dữ liệu ...') \ n " ,
+        " while (không xử lý.has_metadata ()): \ n " ,
+        "     time.s ngủ (1) \ n " ,
+        " print ('Có siêu dữ liệu, bắt đầu tải xuống torrent ...') \ n " ,
+        " \ n " ,
+        " in ( \" Bắt đầu \ " , xử lý.name ()) \ n " ,
+        " \ n " ,
+        " while (handle.status (). state! = lt.torrent_status.seinating): \ n " ,
+        "     s = xử lý.status () \ n " ,
+        "     state_str = ['xếp hàng', 'kiểm tra', 'tải xuống siêu dữ liệu', \\\ n " ,
+        "             'Đang tải xuống', 'đã hoàn thành', 'gieo hạt', 'phân bổ'] \ n " ,
+        "     In ('% .2f %% hoàn thành (giảm:% .1f kb / s lên:% .1f kB / s ngang hàng:% d)% s'% \\\ n " ,
+        "             (s.proceed * 100, s.doad_rate / 1000, s.upload_rate / 1000, \\\ n " ,
+        "             s.num_peers, state_str [s.state])) \ n " ,
+        "     time.s ngủ (5) \ n " ,
+        " \ n " ,
+        " end = time.time () \ n " ,
+        " in (xử lý.name (), \" HOÀN THÀNH \ " ) \ n " ,
+        " \ n " ,
+        " print ( \" Thời gian đã trôi qua: \ " , int ((kết thúc bắt đầu) // 60), \" min: \ " , int ((kết thúc bắt đầu)% 60), \" sec \ " ) \ n " ,
+        " \ n " ,
+        " in (datetime.datetime.now ()) "
+      ],
+      " exec_count " : 0 ,
+      " đầu ra " : [
+        {
+          " output_type " : " luồng " ,
+          " văn bản " : [
+            " https://yts.lt/torrent/doad/866BDCFA006930A718ADBC21D8CAE1F2C7F9D8B3 \ n " ,
+            " 2019-07-20 07: 52: 00.049299 \ n " ,
+            "Đang tải xuống siêu dữ liệu ... \ n " ,
+            " Có siêu dữ liệu, bắt đầu tải xuống torrent ... \ n " ,
+            " Bắt đầu Avengers Infinity War (2018) [BluRay] [1080p] [YTS.AM] \ n " ,
+            " Hoàn thành 5,00% (giảm: 0,0 kb / s lên: 0,0 kB / s ngang hàng: 0) kiểm tra \ n " ,
+            " Hoàn thành 48,99% (giảm: 0,0 kb / s lên: 0,0 kB / s ngang hàng: 0) kiểm tra \ n " ,
+            " Hoàn thành 6,47% (giảm: 0,0 kb / s lên: 0,0 kB / s ngang hàng: 0) đang tải xuống \ n " ,
+            " Hoàn thành 6,47% (giảm: 62,2 kb / s lên: 3,6 kB / s ngang hàng: 10) đang tải xuống \ n " ,
+            " Hoàn thành 6,82% (giảm: 1380,3 kb / s lên: 47,2 kB / s ngang hàng: 19) đang tải xuống \ n " ,
+            " Hoàn thành 7,24% (giảm: 2186,8 kb / s lên: 73,3 kB / s ngang hàng: 24) đang tải xuống \ n " ,
+            " Hoàn thành 8,20% (giảm: 4205,5 kb / s lên: 144,2 kB / s ngang hàng: 36) đang tải xuống \ n " ,
+            " Hoàn thành 9,43% (giảm: 5761,2 kb / s lên: 203,1 kB / s ngang hàng: 54) đang tải xuống \ n " ,
+            " Hoàn thành 11,48% (giảm: 9355,2 kb / s trở lên: 346,3 kB / s ngang hàng: 70) đang tải xuống \ n " ,
+            " Hoàn thành 14,14% (giảm: 12918,5 kb / s trở lên: 499,6 kB / s ngang hàng: 86) đang tải xuống \ n " ,
+            " Hoàn thành 17,20% (giảm: 15389,9 kb / s lên: 605.0 kB / s ngang hàng: 99) đang tải xuống \ n " ,
+            " Hoàn thành 19,95% (giảm: 14961,0 kb / s lên: 600,1 kB / s ngang hàng: 104) đang tải xuống \ n " ,
+            " Hoàn thành 23,02% (giảm: 15568,6 kb / s lên: 645,8 kB / s ngang hàng: 105) đang tải xuống \ n " ,
+            " Hoàn thành 26,32% (giảm: 16888,8 kb / s lên: 706,1 kB / s ngang hàng: 110) đang tải xuống \ n " ,
+            " Hoàn thành 29,63% (giảm: 17476,3 kb / s lên: 749,3 kB / s ngang hàng: 118) đang tải xuống \ n " ,
+            " Hoàn thành 33,94% (giảm: 21169,2 kb / s lên: 928,1 kB / s ngang hàng: 120) đang tải xuống \ n " ,
+            " Hoàn thành 38,92% (giảm: 25172,2 kb / s lên: 1123,2 kB / s ngang hàng: 127) đang tải xuống \ n " ,
+            " Hoàn thành 43,26% (giảm: 23766,8 kb / s lên: 1072,7 kB / s ngang hàng: 128) đang tải xuống \ n " ,
+            " Hoàn thành 48,11% (giảm: 24591,4 kb / s lên: 1095,9 kB / s ngang hàng: 133) đang tải xuống \ n " ,
+            " Hoàn thành 52,18% (giảm: 22809,7 kb / s lên: 1031,8 kB / s ngang hàng: 136) đang tải xuống \ n " ,
+            " Hoàn thành 56,85% (giảm: 24655,3 kb / s lên: 1109,1 kB / s ngang hàng: 136) đang tải xuống \ n " ,
+            " Hoàn thành 61,26% (giảm: 24243,5 kb / s lên: 1081,6 kB / s ngang hàng: 140) đang tải xuống \ n " ,
+            " Hoàn thành 65,67% (giảm: 23533,5 kb / s lên: 1048,8 kB / s ngang hàng: 140) đang tải xuống \ n " ,
+            " Hoàn thành 69,51% (giảm: 21413,7 kb / s trở lên: 954.0 kB / s ngang hàng: 138) đang tải xuống \ n " ,
+            " Hoàn thành 73,66% (giảm: 21588,9 kb / s lên: 976,7 kB / s ngang hàng: 140) đang tải xuống \ n " ,
+            " Hoàn thành 78,68% (giảm: 25918,9 kb / s lên: 1157,2 kB / s ngang hàng: 139) đang tải xuống \ n " ,
+            " Hoàn thành 83,40% (giảm: 25865,4 kb / s lên: 1161,6 kB / s ngang hàng: 145) đang tải xuống \ n " ,
+            " Hoàn thành 88,08% (giảm: 25553,1 kb / s lên: 1149,1 kB / s ngang hàng: 145) đang tải xuống \ n " ,
+            " Hoàn thành 93,28% (giảm: 25877,6 kb / s lên: 1161,6 kB / s ngang hàng: 146) đang tải xuống \ n " ,
+            " Hoàn thành 97,63% (giảm: 24413,3 kb / s lên: 1085,9 kB / s ngang hàng: 148) đang tải xuống \ n " ,
+            " Hoàn thành 99,07% (giảm: 13911,2 kb / s lên: 642,6 kB / s ngang hàng: 148) đang tải xuống \ n " ,
+            " Hoàn thành 99,78% (giảm: 7898,9 kb / s lên: 358,1 kB / s ngang hàng: 142) đang tải xuống \ n " ,
+            " Avengers Infinity War (2018) [BluRay] [1080p] [YTS.AM] HOÀN THÀNH \ n " ,
+            " Thời gian đã trôi qua: 2 phút: 44 giây \ n " ,
+            " 2019-07-20 07: 54: 44.267213 \ n "
+          ],
+          " tên " : " thiết bị xuất chuẩn "
+        }
+      ]
+    }
+  ]
+}
